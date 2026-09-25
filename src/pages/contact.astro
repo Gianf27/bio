@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const links = [
+  { label: 'Email',  value: 'Gferre2703@gmail.com', href: 'mailto:Gferre2703@gmail.com' },
+  { label: 'Phone',  value: '(281) 928-9240',       href: 'tel:+12819289240' },
+  { label: 'GitHub', value: 'github.com/Gianf27',   href: 'https://github.com/Gianf27' },
+  // TODO: add LinkedIn once the profile exists.
+];
+---
+<BaseLayout title="Contact">
+
+  <h1 class="text-3xl font-semibold mb-2">Contact</h1>
+  <p class="text-[var(--color-text-muted)] leading-relaxed mb-10">
+    Houston, TX. Available nights, weekends, and holidays.
+  </p>
+
+  <dl class="space-y-4 mb-10">
+    {links.map(l => (
+      <div class="flex flex-col sm:flex-row sm:gap-4">
+        <dt class="text-sm font-medium text-[var(--color-text-muted)] sm:w-24">{l.label}</dt>
+        <dd>
+          <a href={l.href} class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">{l.value}</a>
+        </dd>
+      </div>
+    ))}
+  </dl>
+
+  <p>
+    <a href={`${base}GianFerre-Resume.pdf`} class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">
+      Download my resume (PDF) &rarr;
+    </a>
+  </p>
+
+</BaseLayout>

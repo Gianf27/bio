@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+// TODO: name the Education courses once Gian confirms which ones he has passed.
+// TODO: drop a headshot at src/assets/headshot.jpg and uncomment the Image block below.
+// import { Image } from 'astro:assets';
+// import headshot from '../assets/headshot.jpg';
+---
+<BaseLayout title="About">
+
+  <!-- Hero -->
+  <section class="flex flex-col sm:flex-row gap-8 items-start mb-12">
+    <!--
+    <Image src={headshot} alt="Gian Ferre" width={200} height={200}
+           class="rounded-sm object-cover flex-shrink-0" />
+    -->
+    <div>
+      <h1 class="text-3xl font-semibold text-[var(--color-text)] mb-2">Gian Ferre</h1>
+      <p class="text-lg text-[var(--color-text-muted)] mb-4">
+        Computer Science student, University of Houston &middot; Houston, TX
+      </p>
+      <p class="text-[var(--color-text)] leading-relaxed">
+        I build gaming PCs, write my own games, and have spent three years serving
+        guests in busy Houston restaurants. Those two halves go together better than
+        they sound: picking parts for someone's first build and walking a table
+        through a menu are the same job. Find out what the person actually wants,
+        then tell them the truth about their options.
+      </p>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="mb-10">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-4">What I Do</h2>
+    <ul class="space-y-3 text-[var(--color-text)] leading-relaxed">
+      <li>
+        <strong>Build PCs.</strong> Gaming builds for myself, for family, and for friends.
+        I spec to a budget, check compatibility before anything gets ordered, assemble
+        and cable it, then stress test and watch the thermals before it goes out the door.
+      </li>
+      <li>
+        <strong>Write games in Python.</strong> An
+        <a href="https://github.com/Gianf27/Asteroids" target="_blank" rel="noopener noreferrer"
+           class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">Asteroids</a>
+        clone in Pygame, with sprite groups, delta-time movement, and rocks that split
+        when you shoot them. A Tkinter
+        <a href="https://github.com/Gianf27/TicTacToe" target="_blank" rel="noopener noreferrer"
+           class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">tic-tac-toe</a>
+        that generates its winning combinations from the board size.
+      </li>
+      <li>
+        <strong>Work on my car.</strong> My own maintenance and modification work.
+        Same instinct as building a PC: research the part, do the job myself, find
+        out what actually broke instead of guessing.
+      </li>
+      <li>
+        <strong>Take care of customers.</strong> Three years on the floor at Yi Peng
+        Thai Dining, 15 to 20 tables a shift, plus hosting, bussing, and a summer as a
+        lifeguard watching 100+ swimmers a day.
+      </li>
+    </ul>
+  </section>
+
+  <!-- What I'm looking for -->
+  <section class="mb-10 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-sm p-6">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-4">What I'm Looking For</h2>
+    <p class="text-[var(--color-text)] leading-relaxed">
+      A customer-facing role on a retail technology floor, in Houston, while I finish
+      my degree in December 2026. I want to spend my shift helping people pick the
+      right hardware and sorting out what went wrong with theirs. I am available
+      nights, weekends, and holidays.
+    </p>
+  </section>
+
+  <!-- Education -->
+  <section class="mb-10">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-4">Education</h2>
+    <div class="space-y-4 text-[var(--color-text)] leading-relaxed">
+      <p>
+        <strong>University of Houston</strong> — B.S. in Computer Science, expected
+        December 2026. Through the first two years of the Computer Science sequence.
+      </p>
+      <p>
+        <strong>Clear Creek High School</strong> — League City, TX. Class of 2021.
+      </p>
+    </div>
+    <p class="mt-4">
+      <a href={`${base}projects`} class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">
+        See the projects &rarr;
+      </a>
+    </p>
+  </section>
+
+</BaseLayout>

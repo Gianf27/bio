@@ -1,0 +1,33 @@
+---
+// src/components/layout/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--color-border)] mt-auto">
+  <div class="max-w-[900px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--color-text-muted)]">
+    <div class="flex items-center gap-4">
+      <a
+        href="mailto:Gferre2703@gmail.com"
+        class="hover:text-[var(--color-text)]"
+      >
+        Gferre2703@gmail.com
+      </a>
+      <a
+        href="tel:+12819289240"
+        class="hover:text-[var(--color-text)]"
+      >
+        (281) 928-9240
+      </a>
+      <a
+        href="https://github.com/Gianf27"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-[var(--color-text)]"
+        aria-label="GitHub profile"
+      >
+        GitHub
+      </a>
+    </div>
+    <p>&copy; {currentYear} Gian Ferre</p>
+  </div>
+</footer>

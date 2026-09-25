@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+
+const jobs = [
+  {
+    employer: 'Yi Peng Thai Dining',
+    role: 'Server',
+    dates: 'June 2023 – Present',
+    place: 'Houston, TX',
+    bullets: [
+      'Serve 15 to 20 tables a shift, tracking several orders at once without dropping details.',
+      'Ask what each guest wants, recommend what fits, and set clear expectations on wait times.',
+      'Learned the full menu to recommend add-ons and hit weekly sales targets.',
+      'Enter every order into the POS system, which keeps kitchen errors and remakes down.',
+      'Handle complaints at the table and turn first-time guests into regulars.',
+    ],
+  },
+  {
+    employer: 'Crawfish Café',
+    role: 'Hostess / Busser',
+    dates: 'April 2023 – May 2023',
+    place: 'Houston, TX',
+    bullets: [
+      'First point of contact for every guest. Gave honest wait times and set the tone for the visit.',
+      'Planned seating assignments through peak hours to keep wait times down.',
+      'Supported servers with beverage service, table cleaning, and resets.',
+    ],
+  },
+  {
+    employer: 'Life Time Fitness',
+    role: 'Lifeguard',
+    dates: 'June 2022 – September 2022',
+    place: 'Friendswood, TX',
+    bullets: [
+      'Watched over 100+ swimmers daily and enforced all facility safety policies.',
+      'Treated injured guests with first aid and CPR, using the facility medical supplies.',
+      'Ran daily opening checks on the pool area for safety, cleanliness, and equipment condition.',
+    ],
+  },
+  {
+    employer: 'Whataburger',
+    role: 'Team Member',
+    dates: 'June 2022 – September 2022',
+    place: 'League City, TX',
+    bullets: [],
+  },
+  {
+    employer: "Luigi's Cucina Italiana",
+    role: 'Busser',
+    dates: 'June 2015 – May 2017',
+    place: 'Houston, TX',
+    bullets: [],
+  },
+];
+
+const skills = [
+  { heading: 'Hardware', items: 'PC building · Part selection · Component troubleshooting · BIOS setup · Car maintenance and modification' },
+  { heading: 'Software', items: 'Python · Pygame · Tkinter · Git and GitHub · Windows · Basic Linux · POS systems' },
+  { heading: 'Customer facing', items: 'Customer service · Explaining tech in plain language · Upselling · Conflict resolution' },
+];
+---
+<BaseLayout title="Experience">
+
+  <h1 class="text-3xl font-semibold mb-2">Experience</h1>
+  <p class="text-[var(--color-text-muted)] leading-relaxed mb-10">
+    Three years of customer-facing work, most of it in high-volume Houston restaurants.
+  </p>
+
+  <section class="mb-12">
+    <div class="space-y-8">
+      {jobs.map(job => (
+        <article class="border-l-2 border-[var(--color-border)] pl-5">
+          <h2 class="text-lg font-semibold">{job.employer}</h2>
+          <p class="text-sm text-[var(--color-text-muted)] mb-3">
+            {job.role} &middot; {job.dates} &middot; {job.place}
+          </p>
+          {job.bullets.length > 0 && (
+            <ul class="space-y-2 text-[var(--color-text)] leading-relaxed list-disc pl-5">
+              {job.bullets.map(b => <li>{b}</li>)}
+            </ul>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-4">Skills</h2>
+    <dl class="space-y-3">
+      {skills.map(s => (
+        <div>
+          <dt class="text-sm font-medium text-[var(--color-text)]">{s.heading}</dt>
+          <dd class="text-[var(--color-text-muted)]">{s.items}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-4">Certifications</h2>
+    <ul class="space-y-1 text-[var(--color-text)]">
+      <li>CPR certified</li>
+      <li>Lifeguard certified</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-4">Activities</h2>
+    <ul class="space-y-1 text-[var(--color-text)]">
+      <li>National Society of Leadership &amp; Success, University of Houston</li>
+      <li>Filipino Student Association, University of Houston</li>
+      <li>Concert &amp; jazz band, All City Orchestra, theater</li>
+    </ul>
+  </section>
+
+</BaseLayout>

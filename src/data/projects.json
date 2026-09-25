@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Asteroids",
+    "kind": "Game",
+    "year": "June 2025",
+    "summary": "A playable clone of the 1979 arcade game, in Python. Fly a ship, shoot the rocks, and every rock you hit splits into two smaller ones. Built by working through the Boot.dev guided project.",
+    "specs": [
+      "Language: Python",
+      "Library: Pygame",
+      "Size: 7 modules, about 290 lines",
+      "Repo: github.com/Gianf27/Asteroids"
+    ],
+    "notes": [
+      "A CircleShape base class holds position, velocity, radius, and the collision check. The ship, the rocks, and the shots all inherit from it, so collision is written once.",
+      "Pygame sprite groups handle what updates and what draws. Each class registers its own containers, so the main loop never has to know what kind of object it is holding.",
+      "Movement multiplies by delta time, so the ship moves at the same speed no matter what frame rate the machine hits.",
+      "Splitting is the part I had to think about. A hit rock spawns two smaller ones, rotated off the original heading by a random 20 to 50 degrees and sped up 20 percent, and the split repeats until the pieces are too small to break."
+    ],
+    "links": [
+      { "label": "Source on GitHub", "href": "https://github.com/Gianf27/Asteroids" }
+    ]
+  },
+  {
+    "title": "Tic-Tac-Toe",
+    "kind": "Game",
+    "year": "July 2025",
+    "summary": "A desktop tic-tac-toe game with a clickable grid, in Python. Built from the Real Python Tkinter tutorial. Still a work in progress.",
+    "specs": [
+      "Language: Python",
+      "Library: Tkinter",
+      "Size: 195 lines",
+      "Repo: github.com/Gianf27/TicTacToe"
+    ],
+    "notes": [
+      "The game rules live in one class and the window lives in another, so the board logic can be tested without opening a window.",
+      "Winning combinations are generated from the board size rather than hard coded, so the same code handles a 4x4 or 5x5 board.",
+      "Still unfinished. Next up: a restart button that actually resets state, and a score counter across rounds."
+    ],
+    "links": [
+      { "label": "Source on GitHub", "href": "https://github.com/Gianf27/TicTacToe" }
+    ]
+  },
+  {
+    "draft": true,
+    "title": "TODO: name this build",
+    "kind": "PC Build",
+    "year": "TODO",
+    "summary": "TODO: one sentence on who it was for and what it had to do. Example: a 1440p gaming build for my cousin on a $900 budget.",
+    "specs": [
+      "CPU: TODO",
+      "GPU: TODO",
+      "Motherboard: TODO",
+      "RAM: TODO",
+      "Storage: TODO",
+      "PSU: TODO",
+      "Case / cooling: TODO"
+    ],
+    "notes": [
+      "TODO: the hard part. A part that did not fit, a BIOS update needed before the CPU would post, a thermal problem you chased down.",
+      "TODO: what it cost and how it performs."
+    ],
+    "links": []
+  },
+  {
+    "draft": true,
+    "title": "TODO: year, make, model",
+    "kind": "Car",
+    "year": "TODO",
+    "summary": "TODO: one sentence on the car and what you are building it into.",
+    "specs": [
+      "Engine / drivetrain: TODO",
+      "Suspension: TODO",
+      "Wheels / tires: TODO",
+      "Intake / exhaust: TODO",
+      "Tuning: TODO"
+    ],
+    "notes": [
+      "TODO: the job you are proudest of. What broke, what you diagnosed, what you did with your own hands versus what a shop did.",
+      "TODO: what you learned that transfers. Reading a service manual, torque specs, not guessing at a diagnosis."
+    ],
+    "links": []
+  }
+]

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import allProjects from '../data/projects.json';
+
+// An entry with "draft": true stays out of the built site. Remove the flag when
+// the TODO fields in src/data/projects.json are filled in.
+const projects = allProjects.filter(p => !p.draft);
+
+const KINDS = [
+  { kind: 'Game',     heading: 'Games' },
+  { kind: 'PC Build', heading: 'PC Builds' },
+  { kind: 'Car',      heading: 'Cars' },
+];
+const known = KINDS.map(k => k.kind);
+const groups = [
+  ...KINDS.map(k => ({ heading: k.heading, items: projects.filter(p => p.kind === k.kind) })),
+  { heading: 'Other', items: projects.filter(p => !known.includes(p.kind)) },
+].filter(g => g.items.length > 0);
+---
+<BaseLayout title="Projects">
+
+  <h1 class="text-3xl font-semibold mb-2">Projects</h1>
+  <p class="text-[var(--color-text-muted)] leading-relaxed mb-10">
+    Machines I have built and code I have written, on my own time and my own money.
+  </p>
+
+  {groups.map(group => (
+    <section class="mb-12">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-5">{group.heading}</h2>
+
+      <div class="space-y-8">
+        {group.items.map(p => (
+          <article class="border-l-2 border-[var(--color-border)] pl-5">
+            <div class="flex flex-wrap items-baseline gap-x-3 mb-2">
+              <h3 class="text-lg font-semibold">{p.title}</h3>
+              <span class="text-sm text-[var(--color-text-muted)]">{p.year}</span>
+            </div>
+
+            <p class="text-[var(--color-text)] leading-relaxed mb-4">{p.summary}</p>
+
+            {p.specs.length > 0 && (
+              <ul class="text-sm text-[var(--color-text-muted)] mb-4 grid sm:grid-cols-2 gap-x-6 gap-y-1">
+                {p.specs.map(s => <li>{s}</li>)}
+              </ul>
+            )}
+
+            {p.notes.length > 0 && (
+              <ul class="space-y-2 text-[var(--color-text)] leading-relaxed list-disc pl-5 mb-4">
+                {p.notes.map(n => <li>{n}</li>)}
+              </ul>
+            )}
+
+            {p.links.length > 0 && (
+              <p class="text-sm flex flex-wrap gap-4">
+                {p.links.map(l => (
+                  <a href={l.href} target="_blank" rel="noopener noreferrer"
+                     class="text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">{l.label}</a>
+                ))}
+              </p>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  ))}
+
+</BaseLayout>
