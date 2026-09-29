@@ -1,5 +1,89 @@
 [
   {
+    "title": "Custom Water-Cooled 4090 Build",
+    "kind": "PC Build",
+    "year": "",
+    "summary": "A full tower with a custom open water loop on the graphics card. The RTX 4090 runs on a full-cover block fed by its own pump, reservoir and 240 mm radiator. The CPU sits on a separate 240 mm AIO.",
+    "specs": [
+      "CPU: AMD Ryzen 7 5800X3D 10th Anniversary, 8 cores, 96 MB V-Cache, 105 W",
+      "GPU: ASUS TUF RTX 4090 24 GB, on a Bitspower full-cover water block",
+      "Motherboard: MSI MAG B550 Tomahawk Max WiFi, AM4 ATX",
+      "RAM: 32 GB DDR4-3000, four G.SKILL Ripjaws V sticks at 3000 MT/s on A-XMP",
+      "Storage: 1 TB WD SN750 NVMe for Linux, 1 TB Samsung 860 EVO SATA for Windows 11",
+      "GPU loop: Bitspower block, pump and reservoir, 240 mm front radiator, push-pull on be quiet! Pure Wings 3 fans",
+      "CPU cooler: Cooler Master Elite Liquid 240 AIO, top mounted",
+      "PSU: EVGA SuperNOVA 850 G2, 850 W 80+ Gold, fully modular",
+      "Case: Corsair Obsidian 750D full tower"
+    ],
+    "notes": [
+      "The 4090 runs on a custom open loop, not a sealed AIO. That means stripping the stock cooler off a card worth more than the rest of the build, mounting a full-cover block, then filling and leak-testing the loop before power ever reaches the board.",
+      "Two separate cooling systems share one chassis. The GPU loop takes the 240 mm front radiator in push-pull. The CPU AIO takes the 240 mm top mount, so neither one breathes the other's exhaust.",
+      "The machine dual boots. Linux lives on the PCIe 4.0 NVMe drive and Windows 11 on the SATA SSD, on separate disks so neither installer can touch the other.",
+      "Four DDR4 sticks on AM4 is the hard case for the memory controller. Two 2x8 GB kits hold 3000 MT/s on A-XMP with all four slots filled."
+    ],
+    "links": [],
+    "photo": "src/assets/projects/pc-build-3.png",
+    "todo": [
+      "Add the build year.",
+      "Add one real troubleshooting story from the loop assembly. It would be the strongest line on the page."
+    ],
+    "alt": "Inside the Corsair 750D: the RTX 4090 on a clear Bitspower water block, the pump and reservoir lit blue at right, and the 240 mm AIO radiator up top."
+  },
+  {
+    "title": "Dual-Chamber Display Build",
+    "kind": "PC Build",
+    "year": "",
+    "summary": "A top-end build in a HYTE Y70 Touch, around an RTX 5080 and a Ryzen 7 9800X3D. Two screens run inside the case: the cooler reports temperatures and the side panel plays artwork.",
+    "specs": [
+      "CPU: AMD Ryzen 7 9800X3D",
+      "GPU: ASUS RTX 5080",
+      "RAM: 32 GB DDR5",
+      "Cooling: NZXT Kraken Elite AIO with the round LCD pump head",
+      "Airflow: three ARGB fans on the side intake",
+      "Case: HYTE Y70 Touch, dual-chamber, wraparound glass with a vertical touchscreen panel"
+    ],
+    "notes": [
+      "The 9800X3D and the 5080 are a deliberate pairing. The X3D chip is the fastest gaming CPU available, so at any resolution the graphics card stays the limit and the CPU never becomes the bottleneck.",
+      "The Y70 is a dual-chamber case. The power supply and every cable run sit in a second compartment behind the board, so the glass corner shows only the parts worth looking at.",
+      "Two displays run inside the build. The Kraken Elite pump head reports GPU temperature, and the Y70 touchscreen plays artwork chosen for it.",
+      "Front-panel wiring and the touchscreen feed both route through the rear chamber, so nothing crosses the window."
+    ],
+    "links": [],
+    "photo": "src/assets/projects/pc-build-2.png",
+    "todo": [
+      "Get the motherboard, storage and PSU.",
+      "Add the build year and one troubleshooting story."
+    ],
+    "alt": "The finished dual-chamber tower, with the Kraken pump LCD reading 33 degrees and artwork playing on the vertical side panel."
+  },
+  {
+    "title": "RTX 4060 Ti Gaming Build",
+    "kind": "PC Build",
+    "year": "",
+    "summary": "A gaming build on a Ryzen 7 9800X3D and an Aorus RTX 4060 Ti, in a white and black tower with the cabling run clean behind the tray.",
+    "specs": [
+      "CPU: AMD Ryzen 7 9800X3D",
+      "GPU: Gigabyte Aorus RTX 4060 Ti",
+      "Motherboard: ASUS ROG Strix B650-A",
+      "RAM: 32 GB DDR5",
+      "Cooling: AIO liquid cooler up top, two ARGB intake fans in front",
+      "Case: white and black mid-tower, tempered glass side panel"
+    ],
+    "notes": [
+      "The CPU is deliberately ahead of the card. A 9800X3D with a 4060 Ti means the graphics card is the limit today, and a card upgrade later lifts the whole machine without touching the platform.",
+      "The B650-A is AM5, so the board takes DDR5 and later Ryzen chips on the same socket.",
+      "Cable management was its own job. The white extensions run behind the tray and reach the board from the closest grommet, so the front of the case stays clean through the glass.",
+      "Intake comes from the two front fans and exhausts through the top radiator, so air crosses the card on its way out."
+    ],
+    "links": [],
+    "photo": "src/assets/projects/pc-build-1.png",
+    "todo": [
+      "Get the storage, PSU, case model and AIO model.",
+      "Add the build year and one troubleshooting story."
+    ],
+    "alt": "The finished white and black tower on the desk, lit through the glass side panel, next to the monitor and keyboard."
+  },
+  {
     "title": "Asteroids",
     "kind": "Game",
     "year": "June 2025",
@@ -17,7 +101,10 @@
       "Splitting is the part I had to think about. A hit rock spawns two smaller ones, rotated off the original heading by a random 20 to 50 degrees and sped up 20 percent, and the split repeats until the pieces are too small to break."
     ],
     "links": [
-      { "label": "Source on GitHub", "href": "https://github.com/Gianf27/Asteroids" }
+      {
+        "label": "Source on GitHub",
+        "href": "https://github.com/Gianf27/Asteroids"
+      }
     ]
   },
   {
@@ -37,29 +124,11 @@
       "Still unfinished. Next up: a restart button that actually resets state, and a score counter across rounds."
     ],
     "links": [
-      { "label": "Source on GitHub", "href": "https://github.com/Gianf27/TicTacToe" }
+      {
+        "label": "Source on GitHub",
+        "href": "https://github.com/Gianf27/TicTacToe"
+      }
     ]
-  },
-  {
-    "draft": true,
-    "title": "TODO: name this build",
-    "kind": "PC Build",
-    "year": "TODO",
-    "summary": "TODO: one sentence on who it was for and what it had to do. Example: a 1440p gaming build for my cousin on a $900 budget.",
-    "specs": [
-      "CPU: TODO",
-      "GPU: TODO",
-      "Motherboard: TODO",
-      "RAM: TODO",
-      "Storage: TODO",
-      "PSU: TODO",
-      "Case / cooling: TODO"
-    ],
-    "notes": [
-      "TODO: the hard part. A part that did not fit, a BIOS update needed before the CPU would post, a thermal problem you chased down.",
-      "TODO: what it cost and how it performs."
-    ],
-    "links": []
   },
   {
     "draft": true,

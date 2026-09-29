@@ -1,14 +1,29 @@
 ---
 import BaseLayout from '../components/layout/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import allProjects from '../data/projects.json';
 
-// An entry with "draft": true stays out of the built site. Remove the flag when
-// the TODO fields in src/data/projects.json are filled in.
+// An entry with "draft": true stays out of the built site.
 const projects = allProjects.filter(p => !p.draft);
 
+// Photos are referenced from projects.json by path. Astro needs a static import
+// to optimise them, so glob the whole folder and look each one up by file name.
+const photos = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/projects/*.{png,jpg,jpeg,webp}',
+  { eager: true },
+);
+const photoFor = (path?: string) => {
+  if (!path) return undefined;
+  const name = path.split('/').pop();
+  const hit = Object.entries(photos).find(([k]) => k.endsWith('/' + name));
+  return hit?.[1].default;
+};
+
+// PC Builds lead the page. The Micro Center postings reward the hardware work
+// more than the code, so it goes above the games.
 const KINDS = [
-  { kind: 'Game',     heading: 'Games' },
   { kind: 'PC Build', heading: 'PC Builds' },
+  { kind: 'Game',     heading: 'Games' },
   { kind: 'Car',      heading: 'Cars' },
 ];
 const known = KINDS.map(k => k.kind);
@@ -21,7 +36,7 @@ const groups = [
 
   <h1 class="text-3xl font-semibold mb-2">Projects</h1>
   <p class="text-[var(--color-text-muted)] leading-relaxed mb-10">
-    Machines I have built and code I have written, on my own time and my own money.
+    Machines I have built and code I have written, on my own time.
   </p>
 
   {groups.map(group => (
@@ -29,7 +44,9 @@ const groups = [
       <h2 class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-5">{group.heading}</h2>
 
       <div class="space-y-8">
-        {group.items.map(p => (
+        {group.items.map(p => {
+          const photo = photoFor(p.photo);
+          return (
           <article class="border-l-2 border-[var(--color-border)] pl-5">
             <div class="flex flex-wrap items-baseline gap-x-3 mb-2">
               <h3 class="text-lg font-semibold">{p.title}</h3>
@@ -37,6 +54,14 @@ const groups = [
             </div>
 
             <p class="text-[var(--color-text)] leading-relaxed mb-4">{p.summary}</p>
+
+            {photo && (
+              <figure class="mb-4">
+                <Image src={photo} alt={p.alt ?? p.title} widths={[400, 800]}
+                       sizes="(min-width: 640px) 24rem, 100vw" loading="lazy"
+                       class="rounded-sm border border-[var(--color-border)] w-auto max-w-sm max-h-96 object-contain" />
+              </figure>
+            )}
 
             {p.specs.length > 0 && (
               <ul class="text-sm text-[var(--color-text-muted)] mb-4 grid sm:grid-cols-2 gap-x-6 gap-y-1">
@@ -59,7 +84,8 @@ const groups = [
               </p>
             )}
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   ))}
