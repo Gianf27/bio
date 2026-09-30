@@ -21,6 +21,10 @@ const photoFor = (path: string) => {
 };
 // An entry carries either one "photo" or a "photos" list, with matching "alt"
 // or "alts". Pair them up here so the markup only deals with one shape.
+// Anchor id for each entry, so the resume can link straight to one build.
+const slug = (title: string) =>
+  title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 const shotsFor = (p: any) => {
   const paths: string[] = p.photos ?? (p.photo ? [p.photo] : []);
   const alts: string[] = p.alts ?? (p.alt ? [p.alt] : []);
@@ -57,7 +61,7 @@ const groups = [
         {group.items.map(p => {
           const shots = shotsFor(p);
           return (
-          <article class="border-l-2 border-[var(--color-border)] pl-5">
+          <article id={slug(p.title)} class="border-l-2 border-[var(--color-border)] pl-5 scroll-mt-24">
             <div class="flex flex-wrap items-baseline gap-x-3 mb-2">
               <h3 class="text-lg font-semibold">{p.title}</h3>
               <span class="text-sm text-[var(--color-text-muted)]">{p.year}</span>
