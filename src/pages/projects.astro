@@ -3,6 +3,8 @@ import BaseLayout from '../components/layout/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import allProjects from '../data/projects.json';
 
+const base = import.meta.env.BASE_URL;
+
 // An entry with "draft": true stays out of the built site.
 const projects = allProjects.filter(p => !p.draft);
 
@@ -12,19 +14,27 @@ const photos = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/projects/*.{png,jpg,jpeg,webp}',
   { eager: true },
 );
-const photoFor = (path?: string) => {
-  if (!path) return undefined;
+const photoFor = (path: string) => {
   const name = path.split('/').pop();
   const hit = Object.entries(photos).find(([k]) => k.endsWith('/' + name));
   return hit?.[1].default;
 };
+// An entry carries either one "photo" or a "photos" list, with matching "alt"
+// or "alts". Pair them up here so the markup only deals with one shape.
+const shotsFor = (p: any) => {
+  const paths: string[] = p.photos ?? (p.photo ? [p.photo] : []);
+  const alts: string[] = p.alts ?? (p.alt ? [p.alt] : []);
+  return paths
+    .map((path, i) => ({ src: photoFor(path), alt: alts[i] ?? p.title }))
+    .filter(s => s.src);
+};
 
-// PC Builds lead the page. The Micro Center postings reward the hardware work
-// more than the code, so it goes above the games.
+// Hardware leads the page. The Micro Center postings reward the build and
+// repair work more than the code, so the PC and car work sits above the games.
 const KINDS = [
   { kind: 'PC Build', heading: 'PC Builds' },
+  { kind: 'Car',      heading: 'Car' },
   { kind: 'Game',     heading: 'Games' },
-  { kind: 'Car',      heading: 'Cars' },
 ];
 const known = KINDS.map(k => k.kind);
 const groups = [
@@ -45,7 +55,7 @@ const groups = [
 
       <div class="space-y-8">
         {group.items.map(p => {
-          const photo = photoFor(p.photo);
+          const shots = shotsFor(p);
           return (
           <article class="border-l-2 border-[var(--color-border)] pl-5">
             <div class="flex flex-wrap items-baseline gap-x-3 mb-2">
@@ -55,11 +65,23 @@ const groups = [
 
             <p class="text-[var(--color-text)] leading-relaxed mb-4">{p.summary}</p>
 
-            {photo && (
+            {p.demo && (
               <figure class="mb-4">
-                <Image src={photo} alt={p.alt ?? p.title} widths={[400, 800]}
-                       sizes="(min-width: 640px) 24rem, 100vw" loading="lazy"
-                       class="rounded-sm border border-[var(--color-border)] w-auto max-w-sm max-h-96 object-contain" />
+                <img src={`${base}${p.demo}`} alt={p.demoAlt ?? p.title} loading="lazy"
+                     class="rounded-sm border border-[var(--color-border)] w-full max-w-lg h-auto" />
+                {p.demoCaption && (
+                  <figcaption class="text-xs text-[var(--color-text-muted)] mt-2">{p.demoCaption}</figcaption>
+                )}
+              </figure>
+            )}
+
+            {shots.length > 0 && (
+              <figure class="mb-4 flex flex-wrap gap-3">
+                {shots.map(s => (
+                  <Image src={s.src} alt={s.alt} widths={[400, 800]}
+                         sizes="(min-width: 640px) 24rem, 100vw" loading="lazy"
+                         class="rounded-sm border border-[var(--color-border)] w-auto max-w-sm max-h-96 object-contain" />
+                ))}
               </figure>
             )}
 

@@ -85,6 +85,42 @@
     "alt": "Inside the white NZXT case, lit red: the Aorus RTX 4060 Ti, an NZXT tower cooler, ARGB memory, and white sleeved cables."
   },
   {
+    "title": "Project Car",
+    "kind": "Car",
+    "year": "",
+    "summary": "A coupe I do the work on myself: suspension, exhaust, wrap and lighting. Same approach as a PC build. Research the part, confirm it fits before it is ordered, do the job, and find out what actually broke instead of guessing.",
+    "specs": [
+      "Suspension: Tein Flex Z coilovers",
+      "Headers: JDL unequal-length headers",
+      "Exhaust: HKS cat-back",
+      "Lighting: custom RGB headlights",
+      "Interior: fiber-optic starlight headliner",
+      "Exterior: full vinyl wrap"
+    ],
+    "notes": [
+      "The headlights are the job I would show first. Factory housings are sealed, so they have to be heated open, fitted with the halo and the projector ring, wired back to a controller, then sealed again tight enough that they never fog. It is the same work as lighting a PC: plan the runs, hide the wiring, and leave the controller somewhere you can still reach.",
+      "The starlight headliner is a few hundred fibre-optic strands fed through the roof lining to one LED engine. The headliner comes down, every strand gets placed and trimmed flush, and the driver has to end up somewhere serviceable.",
+      "Coilovers and headers are the mechanical half. Struts come out and go back in to torque spec, ride height gets set, and the car is aligned afterwards. Headers mean working underneath it, on exhaust studs and gaskets, with the oxygen sensors moved over.",
+      "The wrap is patience more than anything. Trim and lights come off, every panel is cleaned, and the film is laid without trapping air under it.",
+      "The part that carries over to a shop floor: read the service manual, check fitment before buying, and diagnose the actual fault instead of throwing parts at it."
+    ],
+    "links": [],
+    "photos": [
+      "src/assets/projects/car-1.jpg",
+      "src/assets/projects/car-2.jpg"
+    ],
+    "alt": "The custom RGB headlight lit at night, with the white LED strip and a red projector ring.",
+    "alts": [
+      "The custom RGB headlight lit at night, with the white LED strip and a red projector ring.",
+      "The car in the garage mid-job, front bumper off, in its red wrap."
+    ],
+    "todo": [
+      "Confirm year, make and model. The JDL UEL headers and the headlight shape point to a Toyota 86, Subaru BRZ or Scion FR-S, but do not name it until Gian confirms.",
+      "Get one story about something that went wrong and how he found it.",
+      "Confirm he did the wrap himself, or say who did."
+    ]
+  },
+  {
     "title": "Asteroids",
     "kind": "Game",
     "year": "June 2025",
@@ -106,13 +142,16 @@
         "label": "Source on GitHub",
         "href": "https://github.com/Gianf27/Asteroids"
       }
-    ]
+    ],
+    "demo": "asteroids.gif",
+    "demoAlt": "The game running: the ship turning and firing while asteroids drift across the screen and split when they are hit.",
+    "demoCaption": "Recorded from the game running at 60 fps."
   },
   {
     "title": "Tic-Tac-Toe",
     "kind": "Game",
     "year": "July 2025",
-    "summary": "A desktop tic-tac-toe game with a clickable grid, in Python. Built from the Real Python Tkinter tutorial. Still a work in progress.",
+    "summary": "A desktop tic-tac-toe game with a clickable grid, in Python. Built from the Real Python Tkinter tutorial.",
     "specs": [
       "Language: Python",
       "Library: Tkinter",
@@ -122,7 +161,7 @@
     "notes": [
       "The game rules live in one class and the window lives in another, so the board logic can be tested without opening a window.",
       "Winning combinations are generated from the board size rather than hard coded, so the same code handles a 4x4 or 5x5 board.",
-      "Still unfinished. Next up: a restart button that actually resets state, and a score counter across rounds."
+      "Next on it: a restart button that resets state properly, and a score counter across rounds."
     ],
     "links": [
       {
@@ -130,24 +169,5 @@
         "href": "https://github.com/Gianf27/TicTacToe"
       }
     ]
-  },
-  {
-    "draft": true,
-    "title": "TODO: year, make, model",
-    "kind": "Car",
-    "year": "TODO",
-    "summary": "TODO: one sentence on the car and what you are building it into.",
-    "specs": [
-      "Engine / drivetrain: TODO",
-      "Suspension: TODO",
-      "Wheels / tires: TODO",
-      "Intake / exhaust: TODO",
-      "Tuning: TODO"
-    ],
-    "notes": [
-      "TODO: the job you are proudest of. What broke, what you diagnosed, what you did with your own hands versus what a shop did.",
-      "TODO: what you learned that transfers. Reading a service manual, torque specs, not guessing at a diagnosis."
-    ],
-    "links": []
   }
 ]
