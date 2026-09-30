@@ -2,7 +2,7 @@
   {
     "title": "Custom Water-Cooled 4090 Build",
     "kind": "PC Build",
-    "year": "",
+    "year": "2026",
     "summary": "A full tower built for AI work as much as for games. The RTX 4090 runs on a custom open water loop, on a full-cover block fed by its own pump, reservoir and 240 mm radiator. The CPU sits on a separate 240 mm AIO.",
     "specs": [
       "CPU: AMD Ryzen 7 5800X3D 10th Anniversary, 8 cores, 96 MB V-Cache, 105 W",
@@ -26,7 +26,6 @@
     "links": [],
     "photo": "src/assets/projects/pc-build-3.png",
     "todo": [
-      "Add the build year.",
       "Add one real troubleshooting story from the loop assembly. It would be the strongest line on the page."
     ],
     "alt": "Inside the Corsair 750D: the RTX 4090 on a clear Bitspower water block, the pump and reservoir lit blue at right, and the 240 mm AIO radiator up top."
@@ -34,7 +33,7 @@
   {
     "title": "Dual-Chamber Display Build",
     "kind": "PC Build",
-    "year": "",
+    "year": "2026",
     "summary": "A top-end build in a HYTE Y70 Touch, around an RTX 5080 and a Ryzen 7 9800X3D. Two screens run inside the case: the cooler reports temperatures and the side panel plays artwork.",
     "specs": [
       "CPU: AMD Ryzen 7 9800X3D",
@@ -53,15 +52,14 @@
     "links": [],
     "photo": "src/assets/projects/pc-build-2.png",
     "todo": [
-      "Get the motherboard, storage and PSU.",
-      "Add the build year and one troubleshooting story."
+      "Get the motherboard, storage and PSU."
     ],
     "alt": "The finished dual-chamber tower, with the Kraken pump LCD reading 33 degrees and artwork playing on the vertical side panel."
   },
   {
     "title": "RTX 4060 Ti Gaming Build",
     "kind": "PC Build",
-    "year": "",
+    "year": "2025",
     "summary": "A gaming build on a Ryzen 7 9800X3D and an Aorus RTX 4060 Ti, in a white NZXT tower with the cabling run clean behind the board.",
     "specs": [
       "CPU: AMD Ryzen 7 9800X3D",
@@ -81,16 +79,15 @@
     "photo": "src/assets/projects/pc-build-1.png",
     "todo": [
       "Confirm the cooler model, and whether it is air or an AIO.",
-      "Get the storage, PSU and the exact NZXT case model.",
-      "Add the build year and one troubleshooting story."
+      "Get the storage, PSU and the exact NZXT case model."
     ],
     "alt": "Inside the white NZXT case, lit red: the Aorus RTX 4060 Ti, an NZXT tower cooler, ARGB memory, and white sleeved cables."
   },
   {
     "title": "Scion FR-S",
     "kind": "Car",
-    "year": "",
-    "summary": "A Scion FR-S I do the work on myself: suspension, exhaust, wrap and lighting. Same approach as a PC build. Research the part, confirm it fits before ordering, do the job, and find out what actually broke instead of guessing.",
+    "year": "Ongoing",
+    "summary": "A Scion FR-S I have been working on for the last few years: suspension, exhaust, wrap and lighting, all my own work. Same approach as a PC build. Research the part, confirm it fits before ordering, do the job, and find out what actually broke instead of guessing.",
     "specs": [
       "Suspension: Tein Flex Z coilovers",
       "Headers: JDL unequal-length headers",
@@ -117,7 +114,6 @@
       "The FR-S in the garage mid-job, front bumper off, in its red wrap."
     ],
     "todo": [
-      "GUESS, NOT CONFIRMED: the make and model. The JDL UEL headers and the headlight point to the FA20 platform, so this is a Scion FR-S, Subaru BRZ or Toyota 86. Ask Gian which badge and which year, and correct the title before anyone reads it.",
       "Get one story about something that went wrong and how he found it."
     ]
   },
