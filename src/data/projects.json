@@ -60,28 +60,29 @@
     "title": "RTX 4060 Ti Gaming Build",
     "kind": "PC Build",
     "year": "",
-    "summary": "A gaming build on a Ryzen 7 9800X3D and an Aorus RTX 4060 Ti, in a white and black tower with the cabling run clean behind the tray.",
+    "summary": "A gaming build on a Ryzen 7 9800X3D and an Aorus RTX 4060 Ti, in a white NZXT tower with the cabling run clean behind the board.",
     "specs": [
       "CPU: AMD Ryzen 7 9800X3D",
       "GPU: Gigabyte Aorus RTX 4060 Ti",
       "Motherboard: ASUS ROG Strix B650-A",
-      "RAM: 32 GB DDR5",
-      "Cooling: AIO liquid cooler up top, two ARGB intake fans in front",
-      "Case: white and black mid-tower, tempered glass side panel"
+      "RAM: 32 GB DDR5, ARGB sticks",
+      "Cooling: NZXT tower cooler, 120 mm fan",
+      "Case: white NZXT mid-tower, hex-mesh intake panel"
     ],
     "notes": [
       "The CPU is deliberately ahead of the card. A 9800X3D with a 4060 Ti means the graphics card is the limit today, and a card upgrade later lifts the whole machine without touching the platform.",
       "The B650-A is AM5, so the board takes DDR5 and later Ryzen chips on the same socket.",
-      "Cable management was its own job. The white extensions run behind the tray and reach the board from the closest grommet, so the front of the case stays clean through the glass.",
-      "Intake comes from the two front fans and exhausts through the top radiator, so air crosses the card on its way out."
+      "Cable management was its own job. White sleeved extensions reach the board and the card from the closest grommet, so the front of the case stays clean through the glass.",
+      "The hex-mesh panel feeds the intake directly, and the tower cooler exhausts straight out the back."
     ],
     "links": [],
     "photo": "src/assets/projects/pc-build-1.png",
     "todo": [
-      "Get the storage, PSU, case model and AIO model.",
+      "Confirm the cooler model, and whether it is air or an AIO.",
+      "Get the storage, PSU and the exact NZXT case model.",
       "Add the build year and one troubleshooting story."
     ],
-    "alt": "The finished white and black tower on the desk, lit through the glass side panel, next to the monitor and keyboard."
+    "alt": "Inside the white NZXT case, lit red: the Aorus RTX 4060 Ti, an NZXT tower cooler, ARGB memory, and white sleeved cables."
   },
   {
     "title": "Asteroids",
