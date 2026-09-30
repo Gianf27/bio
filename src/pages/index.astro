@@ -1,21 +1,18 @@
 ---
 import BaseLayout from '../components/layout/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import headshot from '../assets/headshot.jpg';
 const base = import.meta.env.BASE_URL;
 // TODO: name the Education courses once Gian confirms which ones he has passed.
 // The expected graduation date is left off on purpose. Brendon's call, 2026-09-29:
 // the degree is taking longer than four years and a date invites the arithmetic.
-// TODO: drop a headshot at src/assets/headshot.jpg and uncomment the Image block below.
-// import { Image } from 'astro:assets';
-// import headshot from '../assets/headshot.jpg';
 ---
 <BaseLayout title="About">
 
   <!-- Hero -->
   <section class="flex flex-col sm:flex-row gap-8 items-start mb-12">
-    <!--
-    <Image src={headshot} alt="Gian Ferre" width={200} height={200}
-           class="rounded-sm object-cover flex-shrink-0" />
-    -->
+    <Image src={headshot} alt="Gian Ferre" width={200} height={200} densities={[1, 2]}
+           class="rounded-sm object-cover flex-shrink-0 w-36 sm:w-50 h-auto" />
     <div>
       <h1 class="text-3xl font-semibold text-[var(--color-text)] mb-2">Gian Ferre</h1>
       <p class="text-lg text-[var(--color-text-muted)] mb-4">
