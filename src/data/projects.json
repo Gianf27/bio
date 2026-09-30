@@ -3,7 +3,7 @@
     "title": "Custom Water-Cooled 4090 Build",
     "kind": "PC Build",
     "year": "",
-    "summary": "A full tower with a custom open water loop on the graphics card. The RTX 4090 runs on a full-cover block fed by its own pump, reservoir and 240 mm radiator. The CPU sits on a separate 240 mm AIO.",
+    "summary": "A full tower built for AI work as much as for games. The RTX 4090 runs on a custom open water loop, on a full-cover block fed by its own pump, reservoir and 240 mm radiator. The CPU sits on a separate 240 mm AIO.",
     "specs": [
       "CPU: AMD Ryzen 7 5800X3D 10th Anniversary, 8 cores, 96 MB V-Cache, 105 W",
       "GPU: ASUS TUF RTX 4090 24 GB, on a Bitspower full-cover water block",
@@ -17,8 +17,10 @@
     ],
     "notes": [
       "The 4090 runs on a custom open loop, not a sealed AIO. That means stripping the stock cooler off a card worth more than the rest of the build, mounting a full-cover block, then filling and leak-testing the loop before power ever reaches the board.",
+      "The 24 GB of video memory is the reason for this card. A model that fits entirely in it runs on the GPU; a model that does not has to spill into system memory and slows to a crawl. That capacity is what makes the machine useful for local AI work and not only for games.",
+      "Cooling was specified for that load. A game pushes the card in bursts, but a training or inference job holds it near full power for hours. Water carries that heat away far better than air, and the card holds its clocks instead of throttling.",
       "Two separate cooling systems share one chassis. The GPU loop takes the 240 mm front radiator in push-pull. The CPU AIO takes the 240 mm top mount, so neither one breathes the other's exhaust.",
-      "The machine dual boots. Linux lives on the PCIe 4.0 NVMe drive and Windows 11 on the SATA SSD, on separate disks so neither installer can touch the other.",
+      "The machine dual boots. Linux lives on the PCIe 4.0 NVMe drive and carries the AI toolchain, Windows 11 on the SATA SSD for games, on separate disks so neither installer can touch the other.",
       "Four DDR4 sticks on AM4 is the hard case for the memory controller. Two 2x8 GB kits hold 3000 MT/s on A-XMP with all four slots filled."
     ],
     "links": [],
